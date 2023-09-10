@@ -1,11 +1,14 @@
 pipeline{
     agent any
     {
-        stages("SCM Checkout")
+        stages
         {
-            steps
+            stage("SCM Checkout")
             {
-                git branch: 'master', url: 'https://github.com/giihub-devops-org/mavan-project-pipeline'
+                steps
+                {
+                    git branch: 'master', url: 'https://github.com/giihub-devops-org/mavan-project-pipeline'
+                }
             }
         }
     }
