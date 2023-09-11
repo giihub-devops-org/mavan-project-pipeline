@@ -38,7 +38,7 @@ pipeline{
             {
             sshagent(['SCPSSH'])
             {
-                sh 'scp -o StrictHostKeyChecking=no **/*.war ec2-user@18.207.164.90:/usr/share/tomcat/webapp'
+                sh 'scp -o StrictHostKeyChecking=no **/*.war ec2-user@44.201.241.66:/usr/share/tomcat/webapp'
             }
 
             }
