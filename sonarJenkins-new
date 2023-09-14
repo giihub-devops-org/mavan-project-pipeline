@@ -1,5 +1,6 @@
 pipeline{
     agent any
+    def branch:master
     stages{
         stage("SCM checkout")
         {
@@ -39,11 +40,12 @@ pipeline{
             when
             {
                 branch 'master'
-                steps
-                {
-                    sh "echo Deploy"
-                }
             }
+            steps
+            {
+                sh "echo Deploy"
+            }
+            
         }
     }
 }
