@@ -39,11 +39,12 @@ pipeline{
             when
             {
                 branch 'master'
-                steps
-                {
-                    sh "echo Deploy"
-                }
             }
+            steps
+            {
+                sh "echo Deploy"
+            }
+            
         }
     }
 }
