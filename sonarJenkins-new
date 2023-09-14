@@ -42,7 +42,7 @@ pipeline{
             }
             steps
             {
-                echo "Deploy"
+                sh echo "Deploy"
             }
         }
     }
