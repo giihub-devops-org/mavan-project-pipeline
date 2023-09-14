@@ -19,7 +19,7 @@ pipeline{
                 }
             }
 
-            }
+            
         }
         stage("run sonar and Build code")
         {
@@ -33,10 +33,6 @@ pipeline{
                 {
                     sh "mvn package sonar:sonar"
                 }
-
-                {
-    
-            }
             }
         }
     }
