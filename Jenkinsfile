@@ -43,6 +43,16 @@ pipeline{
             sh 'docker build -t adait25197/tomcat:latest .'
             }
         }
+        stage("Docker Push to Registry")
+        {
+            steps
+            {
+                withDockerRegistry(credentialsId: 'DockerID', url: 'https://index.docker.io/v1/') 
+                {
+                    sh 'docker push adait25197/tomcat:latest '
+                }
+            }
+        }
     }
     
 }
