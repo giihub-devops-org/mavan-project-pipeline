@@ -32,15 +32,15 @@ pipeline{
 
             }
         }
-        stage("Deploy")
+        stage("Docker Image Creation")
         {
             steps
             {
-            sshagent(['SCPSSH'])
-            {
-                sh 'scp -o StrictHostKeyChecking=no webapp/target/webapp.war ec2-user@44.201.241.66:/usr/share/tomcat/webapps/'
-            }
-
+           // sshagent(['SCPSSH'])
+            //{
+            //    sh 'scp -o StrictHostKeyChecking=no webapp/target/webapp.war ec2-user@44.201.241.66:/usr/share/tomcat/webapps/'
+           // }
+            sh 'docker build -t adait25197/tomcat:latest .'
             }
         }
     }
