@@ -45,17 +45,17 @@ pipeline{
             //{
             //    sh 'scp -o StrictHostKeyChecking=no webapp/target/webapp.war ec2-user@44.201.241.66:/usr/share/tomcat/webapps/'
            // }
-            sh 'docker build -t adait25197/tomcat:latest .'
+            sh 'docker build -t devops:latest 020549807535.dkr.ecr.us-east-1.amazonaws.com/devops:latest .'
+
             }
         }
         stage("Docker Push to Registry")
         {
             steps
             {
-
-                withDockerRegistry(credentialsId: 'ecr:us-east-1:Aws', url: '020549807535.dkr.ecr.us-east-1.amazonaws.com') 
+                withDockerRegistry(credentialsId: 'ecr:us-east-1:AWS', url: '020549807535.dkr.ecr.us-east-1.amazonaws.com/devops') 
                 {
-                    sh 'docker push adait25197/tomcat:latest '
+                    sh 'docker push 020549807535.dkr.ecr.us-east-1.amazonaws.com/devops:latest'
                 }
                 // withDockerRegistry(credentialsId: 'DockerID', url: 'https://index.docker.io/v1/') 
                 // {
