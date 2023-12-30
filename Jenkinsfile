@@ -47,10 +47,15 @@ pipeline{
         {
             steps
             {
-                withDockerRegistry(credentialsId: 'DockerID', url: 'https://index.docker.io/v1/') 
+
+                withDockerRegistry(credentialsId: 'ecr:us-east-1:Aws', url: '020549807535.dkr.ecr.us-east-1.amazonaws.com') 
                 {
                     sh 'docker push adait25197/tomcat:latest '
                 }
+                // withDockerRegistry(credentialsId: 'DockerID', url: 'https://index.docker.io/v1/') 
+                // {
+                    
+                // }
             }
         }
     }
