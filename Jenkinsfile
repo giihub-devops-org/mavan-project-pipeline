@@ -69,8 +69,7 @@ pipeline{
         {
             steps { 
             withAWS(credentials: 'AWS', endpointUrl: '172.31.1.102', region: 'us-east-1') 
-            {
-            {   
+            {  
             sh 'aws eks --region us-east-1 update-kubeconfig --name EKS'
             sh 'kubectl apply -f deployment-service.yaml'
 
@@ -80,5 +79,4 @@ pipeline{
         }
     }
     
-}
 }
