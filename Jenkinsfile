@@ -45,7 +45,8 @@ pipeline{
             //{
             //    sh 'scp -o StrictHostKeyChecking=no webapp/target/webapp.war ec2-user@44.201.241.66:/usr/share/tomcat/webapps/'
            // }
-            sh 'docker build -t devops:latest 020549807535.dkr.ecr.us-east-1.amazonaws.com/devops:latest .'
+            sh "docker build -t devops ."
+            sh 'docker tag devops:latest 020549807535.dkr.ecr.us-east-1.amazonaws.com/devops:latest'
 
             }
         }
