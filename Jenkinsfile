@@ -56,7 +56,7 @@ pipeline{
             {
                 withDockerRegistry(credentialsId: 'ecr:us-east-1:AWS', url: 'https://020549807535.dkr.ecr.us-east-1.amazonaws.com/devops') 
                 {
-                    sh 'aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 020549807535.dkr.ecr.us-east-1.amazonaws.com'
+                    //sh 'aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 020549807535.dkr.ecr.us-east-1.amazonaws.com'
                     sh 'docker push 020549807535.dkr.ecr.us-east-1.amazonaws.com/devops:latest'
                 }
                 // withDockerRegistry(credentialsId: 'DockerID', url: 'https://index.docker.io/v1/') 
