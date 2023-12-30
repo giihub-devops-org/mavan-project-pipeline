@@ -6,7 +6,7 @@ pipeline{
         {
             steps
             {
-                git branch: 'master', url: 'https://github.com/giihub-devops-org/mavan-project-pipeline'
+                git branch: 'master', url: 'https://github.com/giihub-devops-org/mavan-project-pipeline.git'
             }
         }
         stage("Execute Unit Test framework")
@@ -15,7 +15,7 @@ pipeline{
             steps
             {
 
-                withMaven(globalMavenSettingsConfig: '', jdk: 'LOCAL_JDK', maven: 'Local_MVN', mavenSettingsConfig: '', traceability: true) 
+                withMaven(globalMavenSettingsConfig: '5231ba99-f82b-429f-b989-462062e048bd', jdk: 'LOCAL_JDK', maven: 'Local_MVN', mavenSettingsConfig: '', traceability: true)
                 {
                     sh "mvn test"
                 }
@@ -30,7 +30,7 @@ pipeline{
         {
             steps
             {
-            withMaven(globalMavenSettingsConfig: '', jdk: 'LOCAL_JDK', maven: 'Local_MVN', mavenSettingsConfig: '', traceability: true) 
+            withMaven(globalMavenSettingsConfig: '5231ba99-f82b-429f-b989-462062e048bd', jdk: 'LOCAL_JDK', maven: 'Local_MVN', mavenSettingsConfig: '', traceability: true)
             {
                 sh "mvn package"
             }
