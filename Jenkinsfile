@@ -15,7 +15,7 @@ pipeline{
             steps
             {
 
-                withMaven(globalMavenSettingsConfig: '5231ba99-f82b-429f-b989-462062e048bd', jdk: 'LOCAL_JDK', maven: 'Local_MVN', mavenSettingsConfig: '9888a749-4866-468e-af36-03e6e9fc12af', traceability: true)
+                withMaven(globalMavenSettingsConfig: '4cdd837f-ff0c-491f-8412-199ba3bb7399', jdk: 'Local_jdk', maven: 'Local_MVN', mavenSettingsConfig: '1dcd3131-3b21-47da-9e2c-a0af93a8375d', traceability: true)
                 {
                     sh "mvn test"
                 }
@@ -30,7 +30,7 @@ pipeline{
         {
             steps
             {
-            withMaven(globalMavenSettingsConfig: '5231ba99-f82b-429f-b989-462062e048bd', jdk: 'LOCAL_JDK', maven: 'Local_MVN', mavenSettingsConfig: '9888a749-4866-468e-af36-03e6e9fc12af', traceability: true)
+            withMaven(globalMavenSettingsConfig: '4cdd837f-ff0c-491f-8412-199ba3bb7399', jdk: 'Local_jdk', maven: 'Local_MVN', mavenSettingsConfig: '1dcd3131-3b21-47da-9e2c-a0af93a8375d', traceability: true)
             {
                 sh "mvn package"
             }
