@@ -68,7 +68,7 @@ pipeline{
         stage ('deploy to EKS kubernetes cluster')
         {
             steps { 
-            withAWS(credentials: 'AWS', endpointUrl: '172.31.8.144:443', region: 'us-east-1') 
+            withAWS(credentials: 'AWS', endpointUrl: 'https://CA36525179F07020BFBCF8FF4C427BE4.gr7.us-east-1.eks.amazonaws.com', region: 'us-east-1') 
             {  
             //sh 'aws eks --region us-east-1 update-kubeconfig --name EKS'
             sh 'kubectl apply -f deployment-service.yaml'
