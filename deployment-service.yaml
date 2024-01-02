@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: goapp-deployment
+  name: app-deployment
   labels:
-    app: go
+    app: prod
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: go
+      app: prod
   template:
     metadata:
       labels:
-        app: go
+        app: prod
   spec:
       containers:
-        - name: goapp
+        - name: app
           image: 020549807535.dkr.ecr.us-east-1.amazonaws.com/devops
           ports:
             - containerPort: 8080
@@ -29,7 +29,7 @@ metadata:
   name: goapplication-service
 spec:
   selector:
-    app: go
+    app: prod
   ports:
     - port: 8080
       targetPort: 8080
