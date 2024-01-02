@@ -70,7 +70,7 @@ pipeline{
             steps { 
             withAWS(credentials: 'AWS', endpointUrl: '172.31.8.144:443', region: 'us-east-1') 
             {  
-            sh 'aws eks --region us-east-1 update-kubeconfig --name EKS'
+            //sh 'aws eks --region us-east-1 update-kubeconfig --name EKS'
             sh 'kubectl apply -f deployment-service.yaml'
 
 // sh 'helm install ./<chartname> '
