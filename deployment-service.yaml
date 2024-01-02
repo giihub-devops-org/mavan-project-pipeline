@@ -13,13 +13,12 @@ spec:
     metadata:
       labels:
         app: prod
-spec:
-  containers:
-  - name: app
-    image: 020549807535.dkr.ecr.us-east-1.amazonaws.com/devops
-    ports:
-    - containerPort: 8080
-
+  spec:
+    containers:
+    - name: app
+      image: 020549807535.dkr.ecr.us-east-1.amazonaws.com/devops
+      ports:
+      - containerPort: 8080
 
 ---
 
